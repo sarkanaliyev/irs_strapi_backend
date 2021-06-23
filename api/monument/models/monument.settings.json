@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "monuments",
+  "info": {
+    "name": "monument",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "address": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "before_occupation": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "during_occupation": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "after_occupation": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "district": {
+      "via": "monuments",
+      "model": "district"
+    },
+    "category": {
+      "model": "category",
+      "via": "monuments"
+    },
+    "type": {
+      "model": "type",
+      "via": "monuments"
+    },
+    "importance": {
+      "model": "importance",
+      "via": "monuments"
+    },
+    "berpa_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
